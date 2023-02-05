@@ -10,8 +10,10 @@ base: core22
 confinement: strict
 grade: stable
 
-#architectures:
-#  - amd64
+architectures:
+  - amd64
+  - arm64
+  - armhf
 
 environment:
   # WORKAROUND: Add python modules in Snap to search path
