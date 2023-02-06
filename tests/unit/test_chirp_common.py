@@ -716,6 +716,7 @@ class TestOverrideRules(base.BaseTest):
     IMMUTABLE_WHITELIST = [
         # Uncomment me when the time comes
         'Baofeng_GT-5R',
+        'Baofeng_UV-9G',
         'BTECH_GMRS-20V2',
         'BTECH_GMRS-50X1',
         'BTECH_GMRS-V2',
@@ -724,6 +725,7 @@ class TestOverrideRules(base.BaseTest):
         'Retevis_RA85',
         'Retevis_RA685',
         'Retevis_RB17P',
+        'Retevis_RB27',
     ]
 
     def _test_radio_override_immutable_policy(self, rclass):
