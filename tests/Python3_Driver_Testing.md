@@ -23,6 +23,7 @@
 | <a name="BTECH_FRS-A1"></a> BTECH_FRS-A1 | [@KC9HI](https://github.com/KC9HI) | 30-Nov-2022 | Yes | 0.01% |
 | <a name="BTECH_FRS-B1"></a> BTECH_FRS-B1 | [@KC9HI](https://github.com/KC9HI) | 28-Nov-2022 | Yes | 0.04% |
 | <a name="BTECH_GMRS-20V2"></a> BTECH_GMRS-20V2 | [@KC9HI](https://github.com/KC9HI) | 13-Nov-2022 | Yes | 0.03% |
+| <a name="BTECH_GMRS-50V2"></a> BTECH_GMRS-50V2 | [@KC9HI](https://github.com/KC9HI) | 15-Feb-2023 | Yes | 0.00% |
 | <a name="BTECH_GMRS-50X1"></a> BTECH_GMRS-50X1 | [@KC9HI](https://github.com/KC9HI) | 13-Nov-2022 | Yes | 0.13% |
 | <a name="BTECH_GMRS-V1"></a> BTECH_GMRS-V1 | [@KC9HI](https://github.com/KC9HI) | 10-Dec-2022 | Yes | 0.16% |
 | <a name="BTECH_GMRS-V2"></a> BTECH_GMRS-V2 | [@KC9HI](https://github.com/KC9HI) | 10-Dec-2022 | Yes | 0.16% |
@@ -56,7 +57,7 @@
 | <a name="Baofeng_UV-9G"></a> Baofeng_UV-9G | [@KC9HI](https://github.com/KC9HI) | 3-Dec-2022 | Yes | 0.65% |
 | <a name="Baofeng_UV-9R"></a> Baofeng_UV-9R | [@KC9HI](https://github.com/KC9HI) | 3-Dec-2022 | Yes | **2.52%** |
 | <a name="Baofeng_UV-B5"></a> Baofeng_UV-B5 | [@KC9HI](https://github.com/KC9HI) | 18-Nov-2022 | Yes | 0.35% |
-| <a name="Baojie_BJ-218"></a> Baojie_BJ-218 |  |  | Yes | 0.29% |
+| <a name="Baojie_BJ-218"></a> Baojie_BJ-218 | [Implied by LUITON_LT-725UV](#user-content-LUITON_LT-725UV) | 16-Feb-2023 | Yes | 0.29% |
 | <a name="Baojie_BJ-318"></a> Baojie_BJ-318 | [@KC9HI](https://github.com/KC9HI) | 2-Jan-2023 | Yes | 0.10% |
 | <a name="Baojie_BJ-9900"></a> Baojie_BJ-9900 |  |  |  | 0.02% |
 | <a name="Baojie_BJ-UV55"></a> Baojie_BJ-UV55 |  |  | Yes | 0.03% |
@@ -84,7 +85,7 @@
 | <a name="Icom_IC-2730A"></a> Icom_IC-2730A | [Reported working](https://chirp.danplanet.com/issues/10261) | 17-Dec-2022 | Yes | 0.21% |
 | <a name="Icom_IC-2820H"></a> Icom_IC-2820H | [@kk7ds](https://github.com/kk7ds) | 22-Oct-2022 | Yes | 0.04% |
 | <a name="Icom_IC-7000"></a> Icom_IC-7000 |  |  | Yes | 0.03% |
-| <a name="Icom_IC-7100"></a> Icom_IC-7100 |  |  | Yes | 0.06% |
+| <a name="Icom_IC-7100"></a> Icom_IC-7100 | Mike W | 16-Feb-2023 | Yes | 0.06% |
 | <a name="Icom_IC-7200"></a> Icom_IC-7200 | [@kk7ds](https://github.com/kk7ds) | 22-Oct-2022 | Yes |  |
 | <a name="Icom_IC-7300"></a> Icom_IC-7300 | [@kk7ds](https://github.com/kk7ds) | 22-Oct-2022 | Yes | 0.03% |
 | <a name="Icom_IC-746"></a> Icom_IC-746 | [Reported working](https://chirp.danplanet.com/issues/10346) | 3-Feb-2023 | Yes |  |
@@ -98,6 +99,7 @@
 | <a name="Icom_IC-T7H"></a> Icom_IC-T7H | [Probably works](https://github.com/kk7ds/chirp/blob/py3/chirp/drivers/icf.py) | 12-Dec-2022 | Yes | 0.02% |
 | <a name="Icom_IC-T8A"></a> Icom_IC-T8A | [Probably works](https://github.com/kk7ds/chirp/blob/py3/chirp/drivers/icf.py) | 12-Dec-2022 | Yes | 0.01% |
 | <a name="Icom_IC-U82"></a> Icom_IC-U82 | [Implied by Icom_IC-V82](#user-content-Icom_IC-V82) | 25-Jan-2023 | Yes |  |
+| <a name="Icom_IC-V80"></a> Icom_IC-V80 | [@kk7ds](https://github.com/kk7ds) | 16-Feb-2023 | Yes | 0.00% |
 | <a name="Icom_IC-V82"></a> Icom_IC-V82 | [@kk7ds](https://github.com/kk7ds) | 25-Jan-2023 | Yes |  |
 | <a name="Icom_IC-V86"></a> Icom_IC-V86 | [Probably works](https://github.com/kk7ds/chirp/blob/py3/chirp/drivers/icf.py) | 12-Dec-2022 | Yes | 0.04% |
 | <a name="Icom_IC-W32A"></a> Icom_IC-W32A | [Reported working](https://chirp.danplanet.com/issues/10238) | 12-Dec-2022 | Yes | 0.02% |
@@ -381,11 +383,11 @@
 | <a name="Zastone_ZT-X6"></a> Zastone_ZT-X6 | [Implied by Retevis_RT22](#user-content-Retevis_RT22) | 9-Dec-2022 | Yes | 0.11% |
 ## Stats
 
-**Drivers:** 378
+**Drivers:** 380
 
-**Tested:** 82% (313/65) (92% of usage stats)
+**Tested:** 83% (317/63) (93% of usage stats)
 
-**Byte clean:** 88% (335/43)
+**Byte clean:** 88% (337/43)
 
 ## Meaning of this testing
 
