@@ -677,6 +677,10 @@ class ChirpMain(wx.Frame):
             self.Bind(wx.EVT_MENU, self._menu_interact_driver,
                       interact_drv_item)
             radio_menu.Append(interact_drv_item)
+        else:
+            self._reload_both_item = None
+            self._reload_driver_item = None
+            self._interact_driver_item = None
 
         help_menu = wx.Menu()
 
@@ -870,8 +874,13 @@ class ChirpMain(wx.Frame):
             (self._export_menu_item, can_close),
             (self._fixed_item, is_memedit or is_bank),
             (self._large_item, is_memedit or is_bank),
+            (self._reload_driver_item, can_saveas),
+            (self._reload_both_item, can_saveas),
+            (self._interact_driver_item, can_saveas),
         ]
         for ident, enabled in items:
+            if ident is None:
+                continue
             menuitem = self.GetMenuBar().FindItemById(ident)
             if menuitem:
                 # Some items may not be present on all systems (i.e.
@@ -1184,10 +1193,14 @@ class ChirpMain(wx.Frame):
 
         # Reload the actual module
         module = sys.modules[orig_rclass.__module__]
-        LOG.warning('Going to reload %s' % module)
-        directory.enable_reregistrations()
-        import importlib
-        importlib.reload(module)
+        if hasattr(module, '_was_loaded'):
+            LOG.warning('Reloading loaded module %s' % module)
+            self.load_module(module.__file__)
+        else:
+            LOG.warning('Going to reload %s' % module)
+            directory.enable_reregistrations()
+            import importlib
+            importlib.reload(module)
 
         # Grab a new reference to the updated module and pick out the
         # radio class from it.
@@ -1249,10 +1262,17 @@ class ChirpMain(wx.Frame):
         sha = hashlib.sha256()
         sha.update(code.encode())
         LOG.info('Loading module %s SHA256 %s' % (filename, sha.hexdigest()))
-        pyc = compile(code, filename, 'exec')
-        # See this for why:
-        # http://stackoverflow.com/questions/2904274/globals-and-locals-in-python-exec
-        exec(pyc, globals(), globals())
+
+        import importlib.util
+        import sys
+        modname = 'chirp.loaded.%s' % os.path.splitext(
+            os.path.basename(filename))[0]
+
+        spec = importlib.util.spec_from_file_location(modname, filename)
+        module = importlib.util.module_from_spec(spec)
+        module._was_loaded = True
+        sys.modules[modname] = module
+        spec.loader.exec_module(module)
 
     def _menu_load_module(self, event):
         formats = ['Python %s (*.py)|*.py' % _('Files'),
