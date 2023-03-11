@@ -32,7 +32,9 @@ jobs:
         name: snap
         path: ${{ steps.snapcraft.outputs.snap }}
 
-    # Uploads the snap to edge channel, test via: sudo snap refresh pynsource --edge
+    # Uploads the snap to edge channel, test via: sudo snap refresh chirp-snap-andy --edge
+    # Ensure you first: snapcraft register chirp-snap-andy
+    # After installation, run with: chirp-snap-andy.chirp
     - name: Snap upload
       id: snapcraft_upload
       env:
